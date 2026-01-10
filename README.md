@@ -85,8 +85,8 @@ Security Groups:
 
 IAM Roles:
 
-- EC2 Instance Role:** Attached to EC2 instances for runtime access to AWS services
-- GitHub Actions OIDC Role:** Used by Terraform to provision and manage infrastructure
+- EC2 Instance Role: Attached to EC2 instances for runtime access to AWS services
+- GitHub Actions OIDC Role: Used by Terraform to provision and manage infrastructure
 
 🚀 CI/CD Workflow
 
