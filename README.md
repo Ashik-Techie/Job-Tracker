@@ -12,8 +12,8 @@ ensuring reliability and minimal manual intervention.
 
 📊 Key Achievements
 
-* **94% faster infrastructure provisioning** – Reduced from 4+ hours (manual) to 14 minutes via Terraform and GitHub Actions
-* **97% faster deployments** – Automated application deployment in 96 seconds vs. 60+ minutes manual process
+* **94% faster infrastructure deployment** – Reduced from 4+ hours (manual) to 14 minutes via Terraform and GitHub Actions
+* **97% faster application deployment** – Automated application deployment in 96 seconds vs. 60+ minutes manual process
 * **60% cost optimization** – Achieved through strategic architecture decisions and right-sized resource allocation
 * **Multi-AZ architecture** – Designed for high availability with automated failover capabilities
 
