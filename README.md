@@ -10,6 +10,14 @@ JobTracker simplifies tracking and managing job applications with a secure and s
 The system automates both infrastructure provisioning and application deployment using GitHub Actions,
 ensuring reliability and minimal manual intervention.
 
+📊 Key Achievements
+
+* **94% faster infrastructure deployment** – Reduced from 4+ hours (manual) to 14 minutes via Terraform and GitHub Actions
+* **97% faster application deployment** – Automated application deployment in 96 seconds vs. 60+ minutes manual process
+* **60% cost optimization** – Achieved through strategic architecture decisions and right-sized resource allocation
+* **Multi-AZ architecture** – Designed for high availability with automated failover capabilities
+
+
 🏗️ Architecture
 
 ![JobTracker Architecture](https://raw.githubusercontent.com/Miyata-lee/Job-Tracker/main/Architecture.svg)
@@ -59,25 +67,26 @@ Job-Tracker/
 
 ⚙️ Tech Stack
 
-| Category              | Tools Used                               |
-| --------------------- | ---------------------------------------- |
-|   Infrastructure      | Terraform                                |
-|   Cloud Provider      | AWS (EC2, RDS, S3, CloudFront, IAM, VPC) |
-|   CI/CD               | GitHub Actions                           |
-|   Version Control     | Git & GitHub                             |
+| Category                      | Tools Used                                         |
+| -------------------------     | ----------------------------------------           |
+|   Infrastructure as Code      | Terraform                                          |
+|   Cloud Provider              | AWS (EC2, ALB, ASG, RDS, S3, CloudFront, IAM, VPC) |
+|   CI/CD                       | GitHub Actions                                     |
+|   Scripting                   | Bash                                               |
+|   Version Control             | Git & GitHub                                       |
 
 🔒 Security Design
 
 Security Groups:
 
-- ALB SG — Inbound: 80/443 from the internet; Egress: 5000 to EC2 instances.
-- EC2 SG — Inbound: 5000 from ALB SG, optional 22 (SSH) from operator IP; Egress: 3306 to RDS.
+- ALB SG — Inbound: 80 from the internet; Egress: all outbound.
+- EC2 SG — Inbound: 80/5000 from ALB SG, optional 22 (SSH) from operator IP; Egress: 3306 to RDS and 80/443 for updates.
 - RDS SG — Inbound: 3306 from EC2 SG only.
 
 IAM Roles:
 
-- EC2 Instance Role: Grants least-privilege access for app and logging.
-- GitHub Actions OIDC Role: Temporary credentials for Terraform and deployments.
+- EC2 Instance Role: Attached to EC2 instances for runtime access to AWS services
+- GitHub Actions OIDC Role: Used by Terraform to provision and manage infrastructure
 
 🚀 CI/CD Workflow
 
@@ -126,9 +135,6 @@ Two fully automated pipelines:
 - Managing AWS security and IAM roles
 - Balancing performance, reliability, and cost
 
-🎯 Final Thought
-
-The goal wasn’t perfection — it was to learn and build something real using end-to-end DevOps principles.
 
 
 👤 Author: Ashik Meeran 
