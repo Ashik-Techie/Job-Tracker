@@ -66,13 +66,13 @@ variable "desired_capacity" {
 variable "min_capacity" {
   description = "Minimum number of EC2 instances"
   type        = number
-  default     = 1
+  default     = 2
 }
 
 variable "max_capacity" {
   description = "Maximum number of EC2 instances"
   type        = number
-  default     = 3
+  default     = 6
 }
 
 
