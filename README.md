@@ -72,7 +72,7 @@ Job-Tracker/
 To improve reliability and incident response, monitoring and alerting were implemented using Amazon CloudWatch and SNS.
 ### Implemented Alerts
 **EC2 CPU Utilization Alarm**
-- Triggers when CPU usage exceeds 70%, helping detect performance bottlenecks early.
+- Triggers when CPU usage exceeds 80%, helping detect performance bottlenecks early.
 **Application Load Balancer 5XX Alarm**
 - Detects backend failures and unhealthy responses from the application.
 **SNS Email Notifications**
