@@ -64,6 +64,21 @@ Job-Tracker/
 - CloudFront + S3 for caching and faster delivery
 - GitHub Actions CI/CD pipeline with OIDC (no long-lived AWS keys)
 - Optimized for cost and simplicity — public EC2 instances with tightly controlled security groups were used instead of a NAT Gateway setup
+- CloudWatch monitoring and SNS alerting for operational visibility
+
+
+📈 Monitoring & Observability
+
+To improve reliability and incident response, monitoring and alerting were implemented using Amazon CloudWatch and SNS.
+### Implemented Alerts
+**EC2 CPU Utilization Alarm**
+- Triggers when CPU usage exceeds 70%, helping detect performance bottlenecks early.
+**Application Load Balancer 5XX Alarm**
+- Detects backend failures and unhealthy responses from the application.
+**SNS Email Notifications**
+- Sends real-time alerts to email for faster troubleshooting and response.
+This ensures proactive detection of infrastructure and application issues.
+
 
 ⚙️ Tech Stack
 
@@ -134,6 +149,8 @@ Two fully automated pipelines:
 - Implementing CI/CD with GitHub Actions
 - Managing AWS security and IAM roles
 - Balancing performance, reliability, and cost
+- Implementing monitoring and alerting for production-style reliability
+
 
 
 
