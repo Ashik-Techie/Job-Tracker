@@ -62,3 +62,11 @@ variable "vpc_id" {
   description = "VPC ID"
   type        = string
 }
+
+#Monitoring
+variable "alert_email" {
+  description = "Email for alerts"
+  type        = string
+}
+
+

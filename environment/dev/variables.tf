@@ -105,3 +105,8 @@ variable "db_storage_allocated" {
   type        = number
   default     = 20
 }
+
+variable "alert_email" {
+  description = "Email address for alerts"
+  type        = string
+}
