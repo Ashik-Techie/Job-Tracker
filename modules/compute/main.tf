@@ -43,9 +43,9 @@ resource "aws_launch_template" "app" {
   lifecycle {
     create_before_destroy = true
   }
-}
+} 
 
-# Auto Scaling Group
+#Auto Scaling Group
 resource "aws_autoscaling_group" "app" {
   name                = "${var.project_name}-asg-${var.environment}"
   vpc_zone_identifier = [var.public_subnet_1_id, var.public_subnet_2_id]
